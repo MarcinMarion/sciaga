@@ -45,10 +45,15 @@ public class WebDriverMenager {
         //dzieci wstępne zstępne/ relacje
 
         WebElement child = driver.findElement(By.xpath("//div/child::ul"));//zstępni nad tagiem ref
-        WebElement desc = driver.findElement(By.xpath("//div/descendant::ul"));
-        WebElement asc = driver.findElement(By.xpath("//div/ancestor::ul")); // dzieci, wnuki
-        WebElement following = driver.findElement(By.xpath("//img/following::ul")); // dzieci,
-l        WebElement following = driver.findElement(By.xpath("//img/following::ul")); // dzieci, wnuki
+        WebElement desc = driver.findElement(By.xpath("//div/../.."));//bezpośredni rodzic
+        WebElement desc1 = driver.findElement(By.xpath("//div/descendant::"));
+        WebElement asc = driver.findElement(By.xpath("//div/ancestor::")); // dzieci, wnuki
+        WebElement following = driver.findElement(By.xpath("//img/following::")); // dzieci,
+        WebElement followingSibling = driver.findElement(By.xpath("//img/following-sibling::")); // dzieci, po tagu ten sam poziom
+        WebElement prec = driver.findElement(By.xpath("//img/preceding::")); // elementy przed obrazkiem
+        WebElement precSibling = driver.findElement(By.xpath("//img/preceding-sibling::")); // elementy przed obrazkiem ten sam poziom
+
+
 
 
 
