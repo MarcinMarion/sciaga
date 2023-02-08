@@ -54,7 +54,12 @@ public class WebDriverMenager {
         WebElement precSibling = driver.findElement(By.xpath("//img/preceding-sibling::")); // elementy przed obrazkiem ten sam poziom
 
 
+//$x("//input")
 
+
+        WebElement divsAndLinks = driver.findElement(By.xpath("//a | //div"));
+        WebElement andOp = driver.findElement(By.xpath("//input[@name='fname' and @id='fname']"));
+        WebElement orOp = driver.findElement(By.xpath("//input[@name='fname' or @id='fname']"));
 
 
 
