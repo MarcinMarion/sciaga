@@ -36,6 +36,30 @@ public class WebDriverMenager {
         WebElement elementWithAttr = driver.findElement(By.xpath("//*[@name]"));
 
 
+        //wartośc atrybutów
+        WebElement attrEql = driver.findElement(By.xpath("//button[@id='clickOnMe']"));
+        WebElement attrNotEql = driver.findElement(By.xpath("//button[@id!='clickOnMe']"));
+        WebElement attrContain = driver.findElement(By.xpath("//*[@name, 'ame']"));
+        WebElement startsWith = driver.findElement(By.xpath("//*[@starts-with(@name, 'user')]"));
+
+        //dzieci wstępne zstępne/ relacje
+
+        WebElement child = driver.findElement(By.xpath("//div/child::ul"));//zstępni nad tagiem ref
+        WebElement desc = driver.findElement(By.xpath("//div/descendant::ul"));
+        WebElement asc = driver.findElement(By.xpath("//div/ancestor::ul")); // dzieci, wnuki
+        WebElement following = driver.findElement(By.xpath("//img/following::ul")); // dzieci,
+l        WebElement following = driver.findElement(By.xpath("//img/following::ul")); // dzieci, wnuki
+
+
+
+
+
+
+
+
+
+
+
 
 
 
