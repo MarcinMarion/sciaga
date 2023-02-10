@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Random;
 
 public class KlikanieNaElement {
 
@@ -38,6 +39,7 @@ public class KlikanieNaElement {
         for (WebElement option : options){
             System.out.println(option.getText());
 
+
         }
 
 
@@ -58,6 +60,10 @@ public class KlikanieNaElement {
         WebElement maleBox = driver.findElement(By.cssSelector("[value='male']"));
         maleBox.click();
 
+        SelectCheck selectCheck = new SelectCheck();
+
+        System.out.println(selectCheck.checkOption("Audi",selectCar));
+        System.out.println(selectCheck.checkOption("Fiat",selectCar));
 
 
 
