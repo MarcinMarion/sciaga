@@ -1,8 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -49,7 +46,13 @@ public class KlikanieNaElement {
         WebElement userName = driver.findElement(By.name("username"));
         userName.clear();
         userName.sendKeys("admin");
-        //userName.sendKeys(Keys.ENTER);
+        userName.sendKeys(Keys.ENTER);
+
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+        Alert secondAlert = driver.switchTo().alert();
+        alert.accept();
 
 
         //radiobutton/ chekbox
@@ -62,8 +65,9 @@ public class KlikanieNaElement {
 
         SelectCheck selectCheck = new SelectCheck();
 
-        System.out.println(selectCheck.checkOption("Audi",selectCar));
-        System.out.println(selectCheck.checkOption("Fiat",selectCar));
+       // System.out.println(selectCheck.checkOption("Audi",selectCar));
+       // System.out.println(selectCheck.checkOption("Fiat",selectCar));
+
 
 
 
