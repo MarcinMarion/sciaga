@@ -16,11 +16,13 @@ import java.util.concurrent.TimeUnit;
 
 @Listeners(value = {SampleTestListener.class})
 public class FirstTest extends BaseTest {
+    WebDriver driver;
 
-    @Test @Ignore
+    @Test
+
     public void firstTest() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
+        driver = DriverFactory.getDriver();
         driver.navigate().to("https://testeroprogramowania.github.io/selenium/wait2.html");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait przez 10 sekund szuka
         driver.findElement(By.id("clickOnMe")).click();
@@ -46,7 +48,7 @@ public class FirstTest extends BaseTest {
         softAssert.assertEquals(para.getText(), "Dopiero", "Teksty są różne");
         softAssert.assertTrue(para.getText().startsWith("Pojawiłem"));
         softAssert.assertFalse(para.getText().startsWith("Pojawiłem"));
-        softAssert.assertEquals(para.getText(), "dopiero się" , "druga asercja");
+        softAssert.assertEquals(para.getText(), "dopiero się", "druga asercja");
         softAssert.assertAll();
         driver.quit();
     }
