@@ -9,9 +9,7 @@ import org.testng.annotations.Test;
 public class ActionsTest {
     @Test
     public void actionsTest() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.navigate().to("https://testeroprogramowania.github.io/selenium/doubleclick.html");
+
 
 
         Actions actions = new Actions(driver);
